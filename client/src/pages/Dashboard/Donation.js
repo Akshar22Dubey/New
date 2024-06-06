@@ -10,7 +10,7 @@ const Donation = () => {
   const getDonars = async () => {
     try {
       const { data } = await API.post(
-        "https://new-emxx.onrender.com/inventory/get-inventory-hospital",
+        "/get-inventory-hospital",
         {
           filters: {
             inventoryType: "in",

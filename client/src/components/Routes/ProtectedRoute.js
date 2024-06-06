@@ -43,7 +43,7 @@ const ProtectedRoute = ({ children }) => {
   const getUser = async () => {
     try {
       const { data } = await API.get(
-        "https://new-emxx.onrender.com/auth/current-user"
+        "auth/current-user"
       );
       if (data?.success) {
         dispatch(getCurrentUser(data));

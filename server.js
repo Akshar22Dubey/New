@@ -22,9 +22,9 @@ var corsOptions = {
   //optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-app.get("/products/:id", cors(corsOptions), function (req, res, next) {
-  res.json({ msg: "This is CORS-enabled for only example.com." });
-});
+// app.get("/products/:id", cors(corsOptions), function (req, res, next) {
+//   res.json({ msg: "This is CORS-enabled for only example.com." });
+// });
 
 // middlewares
 app.use(express.json());
@@ -40,15 +40,15 @@ app.use("/api/v1/analytics", require("./routes/analyticsRoutes"));
 //port
 const PORT = process.env.PORT || 8080;
 
-app.get("/", (req, res) => {
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client/build/index.html"));
+// });
+// for build
+app.use(express.static(path.join(__dirname, "client/build")));
+
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-// for build
-app.use(express.static(path.join(__dirname, "./client/build")));
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
 
 //listen
 app.listen(PORT, () => {

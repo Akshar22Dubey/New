@@ -12,7 +12,7 @@ const OrganisationPage = () => {
   const getOrg = async () => {
     try {
       const { data } = await API.get(
-        "https://new-emxx.onrender.com/inventory/get-Organisation"
+        "/inventory/get-Organisation"
       );
       if (data?.success) {
         setData(data?.organisations);

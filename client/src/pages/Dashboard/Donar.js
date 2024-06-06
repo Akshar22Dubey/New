@@ -9,7 +9,7 @@ const Donar = () => {
   const getDonars = async () => {
     try {
       const { data } = await API.get(
-        "https://new-emxx.onrender.com/inventory/get-donars"
+        "/inventory/get-donars"
       );
         // console.log(data);
       //   setData(data);

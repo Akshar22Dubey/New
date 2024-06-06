@@ -17,7 +17,7 @@ const Modal = () => {
       }
 
       const { data } = await API.post(
-        "https://new-emxx.onrender.com/inventory/create-inventory",
+        "/inventory/create-inventory",
         {
           email,
           organisation: user?._id,

@@ -9,7 +9,7 @@ const Hospitals = () => {
   const getDonars = async () => {
     try {
       const { data } = await API.get(
-        "https://new-emxx.onrender.com/inventory/get-hospitals"
+        "/inventory/get-hospitals"
       );
       //   console.log(data);
       if (data?.success) {

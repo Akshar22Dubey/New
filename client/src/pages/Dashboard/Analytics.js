@@ -20,7 +20,7 @@ const Analytics = () => {
   const getBloodGroupData = async () => {
     try {
       const { data } = await API.get(
-        "https://new-emxx.onrender.com/analytics/bloodGroups-data"
+        "/analytics/bloodGroups-data"
       );
       console.log(data);
       if (data?.success) {
@@ -45,7 +45,7 @@ const Analytics = () => {
   const getBloodRecords = async () => {
     try {
       const { data } = await API.get(
-        "https://new-emxx.onrender.com/inventory/get-recent-inventory"
+        "/inventory/get-recent-inventory"
       );
       if (data?.success) {
         setInventoryData(data?.inventory);

@@ -5,10 +5,7 @@ export const userLogin = createAsyncThunk(
   "auth/login",
   async ({ email, password, role }, { rejectWithValue }) => {
     try {
-      const { data } = await API.post(
-        `${process.env.REACT_APP_BASEURL}/login`,
-        { role, email, password }
-      );
+      const { data } = await API.post("/auth/login", { role, email, password });
       //store token
       if (data.success) {
         localStorage.setItem("token", data.token);
@@ -47,20 +44,17 @@ export const userRegister = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const { data } = await API.post(
-        `${process.env.REACT_APP_BASEURL}/register`,
-        {
-          name,
-          role,
-          email,
-          password,
-          phone,
-          organisationName,
-          address,
-          hospitalname,
-          website,
-        }
-      );
+      const { data } = await API.post("/auth/register", {
+        name,
+        role,
+        email,
+        password,
+        phone,
+        organisationName,
+        address,
+        hospitalname,
+        website,
+      });
       console.log("API response data:", data);
       if (data?.success) {
         //-> ? mark tha
@@ -89,9 +83,7 @@ export const getCurrentUser = createAsyncThunk(
   "auth/getCurrentUser",
   async ({ rejectWithValue }) => {
     try {
-      const res = await API.get(
-        `${process.env.REACT_APP_BASEURL}/current-user`
-      );
+      const res = await API.get("/auth/getCurrentUser");
       if (res.data) {
         return res?.data;
       }
