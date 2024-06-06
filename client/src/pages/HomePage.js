@@ -20,6 +20,8 @@ const HomePage = () => {
         setData(data?.inventory);
         console.log("data is-----> ", data);
       }
+
+         console.log("data is 1 2 -----> ", data);
     } catch (error) {
       console.log(error);
     }

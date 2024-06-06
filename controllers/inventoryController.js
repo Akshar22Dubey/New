@@ -6,7 +6,7 @@ const createInventoryController = async (req, res) => {
   try {
     const { email, inventoryType } = req.body; //->yaha pehle email tha donaEmail ki jagah
     //validation
-  //  console.log("body respone is:- ", req.body);
+    //  console.log("body respone is:- ", req.body);
     const user = await userModels.findOne({ email });
     console.log("body respone is:- ", user);
     if (!user) {
@@ -19,9 +19,9 @@ const createInventoryController = async (req, res) => {
     //     throw new Error("NOT POSSIBLE")
     // }
 
-      // if (inventoryType === "out" && user.role != "hospital") {
-      //   throw new Error("NOT POSSIBLE");
-      // }
+    // if (inventoryType === "out" && user.role != "hospital") {
+    //   throw new Error("NOT POSSIBLE");
+    // }
 
     const inventory = new inventoryModal(req.body);
     await inventory.save();
@@ -33,7 +33,7 @@ const createInventoryController = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    console.log("login data ",req.body);
+    console.log("login data ", req.body);
     return res.status(500).send({
       success: false,
       message: "Error in create inventory API",
@@ -44,10 +44,12 @@ const createInventoryController = async (req, res) => {
 
 const getInventoryController = async (req, res) => {
   try {
-    const inventory = await inventoryModal
-      .find({
-        organisation: req.body.userId,
-      })
+    const inventory = await inventoryModal.find({
+      organisation: req.body.userId,
+    });
+
+    console
+      .log("inventoey masala --->", inventory)
       .populate("donar")
       .populate("hospital")
       .sort({ createdAt: -1 });
