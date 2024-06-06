@@ -15,12 +15,10 @@ const HomePage = () => {
   //get function
   const getBloodRecords = async () => {
     try {
-      const { data } = await API.get(
-        "/inventory/get-inventory"
-      );
+      const { data } = await API.get("/inventory/get-inventory");
       if (data?.success) {
         setData(data?.inventory);
-        console.log(data);
+        console.log("data is-----> ", data);
       }
     } catch (error) {
       console.log(error);
