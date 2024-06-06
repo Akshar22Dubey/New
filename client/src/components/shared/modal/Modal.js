@@ -16,17 +16,16 @@ const Modal = () => {
         return alert("Please Provide All Fields");
       }
 
-      const { data } = await API.post(
-        "/inventory/create-inventory",
-        {
-          email,
-          organisation: user?._id,
-          inventoryType,
-          bloodgroup,
-          quantity,
-        }
-      );
+      const { data } = await API.post("/inventory/create-inventory", {
+        email,
+        organisation: user?._id,
+        inventoryType,
+        bloodgroup,
+        quantity,
+      });
+
       console.log("clicked");
+      
       if (data?.success) {
         alert("New Record Created");
         window.location.reload();

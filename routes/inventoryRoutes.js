@@ -14,10 +14,10 @@ const router = express.Router();
 
 //routes
 // ADD INVENTPRY || POST
-router.post("/create-inventory", authMiddelware, createInventoryController);
+router.post('/create-inventory', authMiddelware, createInventoryController);
 
 // ADD INVENTORY || GET
-router.get("/get-inventory", authMiddelware, getInventoryController);
+router.get('/get-inventory', authMiddelware, getInventoryController);
 //  router.get(
 //    "/get-recent-inventory",
 //    authMiddelware,
@@ -29,11 +29,11 @@ router.get("/get-inventory", authMiddelware, getInventoryController);
 //    getInventoryHospitalController
 //  );
 
-router.get("/get-donars", authMiddelware, getDonarsController);
+router.get('/get-donars', authMiddelware, getDonarsController);
 
-router.get("/get-hospitals", authMiddelware, getHospitalController);
+router.get('/get-hospitals', authMiddelware, getHospitalController);
 
-router.get("/get-Organisation", authMiddelware, getOrganisationController);
+router.get('/get-Organisation', authMiddelware, getOrganisationController);
 
 //  router.get(
 //    "/get-orgnaisation-for-hospital",
