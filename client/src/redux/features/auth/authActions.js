@@ -6,7 +6,7 @@ export const userLogin = createAsyncThunk(
   async ({ email, password, role }, { rejectWithValue }) => {
     try {
       const { data } = await API.post(
-        `${process.env.REACT_APP_BASEURL}/v1/auth/login`,
+        `${process.env.REACT_APP_BASEURL}/login`,
         { role, email, password }
       );
       //store token
@@ -48,7 +48,7 @@ export const userRegister = createAsyncThunk(
   ) => {
     try {
       const { data } = await API.post(
-        `${process.env.REACT_APP_BASEURL}/v1/auth/register`,
+        `${process.env.REACT_APP_BASEURL}/register`,
         {
           name,
           role,
@@ -90,7 +90,7 @@ export const getCurrentUser = createAsyncThunk(
   async ({ rejectWithValue }) => {
     try {
       const res = await API.get(
-        `${process.env.REACT_APP_BASEURL}/v1/auth/current-user`
+        `${process.env.REACT_APP_BASEURL}/current-user`
       );
       if (res.data) {
         return res?.data;
