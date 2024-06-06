@@ -26,7 +26,7 @@ const createInventoryController = async (req, res) => {
     const inventory = new inventoryModal(req.body);
     await inventory.save();
     //  throw new Error("fctt");
-    // console.log("Inventory saved successfully:", inventory);
+    console.log("Inventory saved successfully:", inventory);
     return res.status(201).send({
       success: true,
       message: "New Blood Record Added",
