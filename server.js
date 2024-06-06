@@ -16,6 +16,7 @@ connectDB();
 
 //rest object is created
 const app = express();
+
 var corsOptions = {
   origin: "*",
   //optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -39,6 +40,9 @@ app.use("/api/v1/analytics", require("./routes/analyticsRoutes"));
 //port
 const PORT = process.env.PORT || 8080;
 
+app.get("/", (req, res) => {
+  res.send("hello world!!!!!");
+});
 // for build
 app.use(express.static(path.join(__dirname, "./client/build")));
 
