@@ -27,7 +27,7 @@ app.get("/products/:id", cors(corsOptions), function (req, res, next) {
 
 // middlewares
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 app.use(morgan("dev"));
 
 // ROUTES
@@ -40,10 +40,10 @@ app.use("/api/v1/analytics", require("./routes/analyticsRoutes"));
 const PORT = process.env.PORT || 8080;
 
 // for build
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 //listen
