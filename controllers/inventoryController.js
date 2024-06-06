@@ -44,15 +44,15 @@ const createInventoryController = async (req, res) => {
 
 const getInventoryController = async (req, res) => {
   try {
-    const inventory = await inventoryModal.find({
-      organisation: req.body.userId,
-    });
-
-    console
-      .log("inventoey masala --->", inventory)
+    const inventory = await inventoryModal
+      .find({
+        organisation: req.body.userId,
+      })
       .populate("donar")
       .populate("hospital")
       .sort({ createdAt: -1 });
+
+    console.log("inventort -->", inventory);
     return res.status(200).send({
       success: true,
       message: "get all record successfully",
