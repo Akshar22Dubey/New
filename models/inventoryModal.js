@@ -23,7 +23,7 @@ const inventorySchema = new mongoose.Schema(
     organisation: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "users",
-      //required: [true, "organisation is required"],
+      required: [true, "organisation is required"],
     },
     hospital: {
       type: mongoose.Schema.Types.ObjectId,

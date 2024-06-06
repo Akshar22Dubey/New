@@ -44,6 +44,7 @@ const createInventoryController = async (req, res) => {
 
 const getInventoryController = async (req, res) => {
   try {
+    console.log("request ko dekho -->", req.body.userId);
     const inventory = await inventoryModal
       .find({
         organisation: req.body.userId,
