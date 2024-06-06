@@ -27,7 +27,7 @@ app.get("/products/:id", cors(corsOptions), function (req, res, next) {
 
 // middlewares
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 app.use(morgan("dev"));
 
 // ROUTES
