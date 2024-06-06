@@ -18,7 +18,7 @@ function App() {
       <ToastContainer />
       <Routes>
         <Route
-          path="https://new-emxx.onrender.com/organisation"
+          path="/organisation"
           element={
             <ProtectedRoute>
               <Organisation />
@@ -26,7 +26,7 @@ function App() {
           }
         />
         <Route
-          path="https://new-emxx.onrender.com/hospital"
+          path="/hospital"
           element={
             <ProtectedRoute>
               <Hospitals />
@@ -34,7 +34,7 @@ function App() {
           }
         />
         <Route
-          path="https://new-emxx.onrender.com/analytics"
+          path="/analytics"
           element={
             <ProtectedRoute>
               <Analytics />
@@ -42,7 +42,7 @@ function App() {
           }
         />
         <Route
-          path="https://new-emxx.onrender.com/consumer"
+          path="/consumer"
           element={
             <ProtectedRoute>
               <Consumer />
@@ -51,7 +51,7 @@ function App() {
         />
 
         <Route
-          path="https://new-emxx.onrender.com/donation"
+          path="/donation"
           element={
             <ProtectedRoute>
               <Donation />
@@ -60,7 +60,7 @@ function App() {
         />
 
         <Route
-          path="https://new-emxx.onrender.com/donar"
+          path="/donar"
           element={
             <ProtectedRoute>
               <Donar />
@@ -68,7 +68,7 @@ function App() {
           }
         />
         <Route
-          path="https://new-emxx.onrender.com/"
+          path="/"
           element={
             <ProtectedRoute>
               <HomePage />
@@ -76,7 +76,7 @@ function App() {
           }
         />
         <Route
-          path="https://new-emxx.onrender.com/login"
+          path="/login"
           element={
             <PublicRoute>
               <Login />
@@ -84,7 +84,7 @@ function App() {
           }
         />
         <Route
-          path="https://new-emxx.onrender.com/register"
+          path="/register"
           element={
             <PublicRoute>
               <Register />
