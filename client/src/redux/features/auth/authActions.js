@@ -5,7 +5,10 @@ export const userLogin = createAsyncThunk(
   "auth/login",
   async ({ email, password, role }, { rejectWithValue }) => {
     try {
-      const { data } = await API.post("/auth/login", { role, email, password });
+      const { data } = await API.post(
+        "https://new-emxx.onrender.com/auth/login",
+        { role, email, password }
+      );
       //store token
       if (data.success) {
         localStorage.setItem("token", data.token);
@@ -44,17 +47,20 @@ export const userRegister = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const { data } = await API.post("/auth/register", {
-        name,
-        role,
-        email,
-        password,
-        phone,
-        organisationName,
-        address,
-        hospitalname,
-        website,
-      });
+      const { data } = await API.post(
+        "https://new-emxx.onrender.com/auth/register",
+        {
+          name,
+          role,
+          email,
+          password,
+          phone,
+          organisationName,
+          address,
+          hospitalname,
+          website,
+        }
+      );
       console.log("API response data:", data);
       if (data?.success) {
         //-> ? mark tha
@@ -83,7 +89,9 @@ export const getCurrentUser = createAsyncThunk(
   "auth/getCurrentUser",
   async ({ rejectWithValue }) => {
     try {
-      const res = await API.get("/auth/current-user");
+      const res = await API.get(
+        "https://new-emxx.onrender.com/auth/current-user"
+      );
       if (res.data) {
         return res?.data;
       }

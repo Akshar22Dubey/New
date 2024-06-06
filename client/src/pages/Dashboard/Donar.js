@@ -8,7 +8,9 @@ const Donar = () => {
   //find donar records
   const getDonars = async () => {
     try {
-      const { data } = await API.get("/inventory/get-donars");
+      const { data } = await API.get(
+        "https://new-emxx.onrender.com/inventory/get-donars"
+      );
         // console.log(data);
       //   setData(data);
       if (data?.success) {

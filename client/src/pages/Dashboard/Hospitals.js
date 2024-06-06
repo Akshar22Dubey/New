@@ -8,7 +8,9 @@ const Hospitals = () => {
   //find donar records
   const getDonars = async () => {
     try {
-      const { data } = await API.get("/inventory/get-hospitals");
+      const { data } = await API.get(
+        "https://new-emxx.onrender.com/inventory/get-hospitals"
+      );
       //   console.log(data);
       if (data?.success) {
         setData(data?.hospitals);

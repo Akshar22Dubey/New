@@ -9,12 +9,15 @@ const Donation = () => {
   //find donar records
   const getDonars = async () => {
     try {
-      const { data } = await API.post("/inventory/get-inventory-hospital", {
-        filters: {
-          inventoryType: "in",
-          donar: user?._id,
-        },
-      });
+      const { data } = await API.post(
+        "https://new-emxx.onrender.com/inventory/get-inventory-hospital",
+        {
+          filters: {
+            inventoryType: "in",
+            donar: user?._id,
+          },
+        }
+      );
       if (data?.success) {
         setData(data?.inventory);
         console.log(data);

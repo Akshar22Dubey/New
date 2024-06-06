@@ -19,7 +19,9 @@ const Analytics = () => {
   //GET BLOOD GROUP DATA
   const getBloodGroupData = async () => {
     try {
-      const { data } = await API.get("/analytics/bloodGroups-data");
+      const { data } = await API.get(
+        "https://new-emxx.onrender.com/analytics/bloodGroups-data"
+      );
       console.log(data);
       if (data?.success) {
         console.log("yaha aaya ki nhi", data.bloodgroupData.availabeBlood);
@@ -42,7 +44,9 @@ const Analytics = () => {
   //get function
   const getBloodRecords = async () => {
     try {
-      const { data } = await API.get("/inventory/get-recent-inventory");
+      const { data } = await API.get(
+        "https://new-emxx.onrender.com/inventory/get-recent-inventory"
+      );
       if (data?.success) {
         setInventoryData(data?.inventory);
         console.log(data);
