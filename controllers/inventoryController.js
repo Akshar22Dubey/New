@@ -22,10 +22,10 @@ const createInventoryController = async (req, res) => {
     // if (inventoryType === "out" && user.role != "hospital") {
     //   throw new Error("NOT POSSIBLE");
     // }
-   console.log("body response before inventory:- ", req.body);
     const inventory = new inventoryModal(req.body);
     await inventory.save();
     //  throw new Error("fctt");
+    console.log("body response before inventory:- ", req.body);
     console.log("Inventory saved successfully:", inventory);
     return res.status(201).send({
       success: true,
