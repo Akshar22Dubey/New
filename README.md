@@ -5,7 +5,7 @@ A combined full-stack web application to manage blood donation, tracking, and al
 ---
 
 ## 🌐 Live Demo
-https://66b618cc3f40816725a8ee06--zesty-pegasus-45f599.netlify.app/login
+https://66b618cc3f40816725a8ee06--zesty-pegasus-45f599.netlify.app/
 
 ---
 
